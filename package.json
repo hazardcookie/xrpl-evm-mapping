@@ -2,7 +2,7 @@
   "name": "xrpl-evm-mapping",
   "license": "MIT",
   "author": "hazardcookie",
-  "version": "0.1.0",
+  "version": "0.4.0",
   "description": "Maps a XRPL secret to an EVM keypair",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
