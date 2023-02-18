@@ -22,7 +22,6 @@
   },
   "dependencies": {
     "ethereumjs-util": "^7.1.5",
-    "xrpl": "^2.6.0",
-    "xrpl-evm-mapping": "0.1.0"
+    "xrpl": "^2.6.0"
   }
 }
