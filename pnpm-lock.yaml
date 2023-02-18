@@ -9,10 +9,12 @@ specifiers:
   tsup: ^6.6.3
   typescript: ^4.7.4
   xrpl: ^2.6.0
+  xrpl-evm-mapping: 'link:'
 
 dependencies:
   ethereumjs-util: 7.1.5
   xrpl: 2.6.0
+  xrpl-evm-mapping: 'link:'
 
 devDependencies:
   '@changesets/cli': 2.26.0
