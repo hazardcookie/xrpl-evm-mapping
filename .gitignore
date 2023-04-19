@@ -1,2 +1,14 @@
-node_modules
+# Ignore haters
+haters
+
+# Ignore build folder
 dist
+
+# Ignore node modules
+node_modules
+
+# Ignore test folder
+test
+
+# Ignore package locks
+*.lock
