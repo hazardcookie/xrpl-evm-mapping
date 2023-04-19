@@ -40,10 +40,10 @@ export function mapXrplSecretToEvm(xrpl_secret_key: string): Mapped_Keys {
   const public_address = privateToAddress(mapped_private_key).toString("hex");
 
   const mapped_wallet: Mapped_Keys = {
-    xrpl_address: `${xrpl_wallet.address}`,
-    xrpl_secret: `${xrpl_wallet.seed}`,
-    mapped_evm_private_key: mapped_private_key.toString("hex"),
-    mapped_evm_public_key: `${public_key}`,
+    xrpl_address: xrpl_wallet.address,
+    xrpl_secret: xrpl_wallet.seed,
+    mapped_evm_private_key: mapped_private_key.toString("hex").toUpperCase(),
+    mapped_evm_public_key: public_key.toUpperCase(),
     mapped_evm_public_address: `0x${public_address}`,
   };
 
@@ -70,8 +70,8 @@ export function mapXrplToEvm(input: Input): Mapped_Keys {
   const public_address = privateToAddress(private_key_buffer).toString("hex");
 
   const mapped_wallet: Mapped_Keys = {
-    mapped_evm_private_key: private_key_buffer.toString("hex"),
-    mapped_evm_public_key: public_key,
+    mapped_evm_private_key: keypair?.privateKey || input.privateKey,
+    mapped_evm_public_key: public_key.toUpperCase(),
     mapped_evm_public_address: `0x${public_address}`,
   };
 
@@ -87,10 +87,7 @@ export class XEvmWallet {
       publicKey,
       privateKey,
     }).mapped_evm_public_key;
-    this.privateKey = mapXrplToEvm({
-      publicKey,
-      privateKey,
-    }).mapped_evm_private_key;
+    this.privateKey = privateKey;
     this.address = mapXrplToEvm({
       publicKey,
       privateKey,
